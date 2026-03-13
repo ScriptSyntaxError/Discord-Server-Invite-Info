@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Invite Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Container -->
+<div class="container">
+  <h1>Discord Invite Information</h1>
+  <input type="text" id="inviteURL" placeholder="Enter Discord invite URL" />
+  <button class=btn1 onclick="fetchInviteData()">🔍 Get Info</button>
+  <button class="toggle-dark-mode" onclick="toggleDarkMode()"> Toggle Dark Mode</button>
+
+  <div class="response" id="responseData">
+    <h2>Invite Info</h2>
+	
+	<!-- Server Banner -->
+<div id="serverBannerContainer" class="server-banner" style="display: none;">
+    <img id="serverBanner" alt="Server Banner" />
+</div>
+
+<!-- Server Header -->
+<div class="server-header">
+    <img id="serverpfp" alt="Server Icon" class="server-icon" />
+    <div class="server-info">
+        <h3 id="serverName"></h3>
+        <div class="server-members">
+          <p><span class="label">👥 Total Members:</span> <span id="membersServer"></span></p>
+          <p><span class="label">🟢 Online:</span> <span id="membersOnline"></span></p>
+        </div>
+        <p><span class="label">🚀 Boost Level:</span> <span id="boostLevel"></span></p>
+        <p><span class="label">⌛ Server Created:</span> <span id="serverCreationDate"></span></p>
+    </div>
+</div>
+
+	
+	<br>
+	<p><span class="label">📃 Server Description:</span> <span id="guildDescription"></span></p><br>
+	
+	<p><span class="label"> Invite Type:</span> <span id="inviteType"></span></p>
+	<p><span class="label"> Invite Code:</span> <span id="inviteCode"></span></p>
+  <p><span class="label">🕒 Link Expires At:</span> <span id="expirationTime"></span></p><br>	
+	
+	<p><span class="label">🖼️ Widget Enabled:</span> <span id="widgetStatus"></span></p>
+	<p><span class="label">🆕 Preview Enabled:</span> <span id="previewStatus"></span></p>	
+    
+	<!-- Inviter -->
+    <div id="inviterInfo">
+      <h3>👤 Inviter</h3>
+      <div class="inviter-header">
+        <img id="inviterpfp" alt="Inviter" class="inviter-avatar" />
+        <div class="inviter-info">
+          <p><span class="label">Display Name:</span> <span id="inviterDisplayName"></span></p>
+          <p><span class="label">Username:</span> <span id="inviterUsername"></span></p>
+          <p><span class="label">User ID:</span> <span id="userID"></span></p>
+          <p><span class="label">Badges:</span> <span id="inviterBadges"></span></p>
+        </div>
+      </div>
+    </div>
+
+    <button class="view-raw-button" onclick="toggleRawResponse()">View Raw</button>
+    <button class="more-details-button" onclick="toggleMoreDetails()">More Details</button>
+  </div>
+
+  <!-- More Details Section -->
+  <div class="more-details" id="moreDetails">
+    <p><span class="label">Invite to Channel:</span> <span id="channel"></span></p>
+    <p><span class="label">Channel ID:</span> <span id="channelID"></span></p>
+	<br>
+    <p><span class="label">Verification Level:</span> <span id="verificationLevel"></span></p>
+    <p><span class="label">Vanity URL Code:</span> <span id="vanity_url_code"></span></p>
+	<p><span class="label">NSFW Level:</span> <span id="nsfwLevel"></span></p>
+	<p><span class="label">NSFW Server:</span> <span id="nsfw"></span></p>
+	<p><span class="label">Boosts:</span> <span id="premium_subscription_count"></span></p>
+    <p><span class="label">Guild Features:</span> <span id="guildFeatures"></span></p>
+  </div>
+</div>
+
+
+<div class="raw-response" id="rawResponse">
+  <h2>Raw API Response</h2>
+  <pre id="prettyRawResponse"></pre>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
